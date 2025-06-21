@@ -2,6 +2,8 @@ package game;
 
 import java.util.Scanner;
 
+import static java.lang.Math.abs;
+
 public class ContrStrike {
     public static void main(String[] args) {
         int numberOfPlayers = 5;
@@ -23,11 +25,12 @@ public class ContrStrike {
         printFragPlayers(secondTeamName, fragPlayersSecondTeam, playersSecondTeam);
         System.out.printf("\nAverage frags team %s: %.2f\n", secondTeamName, avgFragSecondTeam);
 
+        double esp = 0.000001; // точность сравнения при действительных числах
         if (avgFragFirstTeam > avgFragSecondTeam) {
             System.out.println("\nTeam " + firstTeamName + " has won!" + " Scored points: " + avgFragFirstTeam);
         } else if (avgFragFirstTeam < avgFragSecondTeam) {
             System.out.println("\nTeam " + secondTeamName + " has won!" + " Scored points: " + avgFragSecondTeam);
-        } else if (avgFragFirstTeam == avgFragSecondTeam) {
+        } else if (abs(avgFragFirstTeam - avgFragSecondTeam) <= esp) {
             System.out.println("\nDraw in the game");
         } else {
             System.out.println("\nThe game did not take place!");
