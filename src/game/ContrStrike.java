@@ -10,13 +10,13 @@ public class ContrStrike {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the name of the first team: ");
         String firstTeamName = sc.nextLine();
-        String playersFirstTeam[] = enterNamePlayers(numberOfPlayers);
+        String[] playersFirstTeam = enterNamePlayers(numberOfPlayers);
         int[] fragPlayersFirstTeam = getFragPlayers(firstTeamName, numberOfPlayers, playersFirstTeam);
         double avgFragFirstTeam = averageFrag(fragPlayersFirstTeam);
 
         System.out.print("Enter the name of the second team: ");
         String secondTeamName = sc.nextLine();
-        String playersSecondTeam[] = enterNamePlayers(numberOfPlayers);
+        String[] playersSecondTeam = enterNamePlayers(numberOfPlayers);
         int[] fragPlayersSecondTeam = getFragPlayers(secondTeamName, numberOfPlayers, playersSecondTeam);
         double avgFragSecondTeam = averageFrag(fragPlayersSecondTeam);
 
