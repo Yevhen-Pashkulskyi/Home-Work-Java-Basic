@@ -1,6 +1,7 @@
 package game;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Math.abs;
 
@@ -50,15 +51,15 @@ public class ContrStrike {
     // функция принимает в аргументы имя команды, и записывает в массив все фраги каждого игрока
     private static int[] getFragPlayers(String nameTeam, int numberOfPlayers, String[] playersName) {
         int[] fragPlayers = new int[numberOfPlayers];
-        Scanner sc = new Scanner(System.in);
+
         for (int i = 0; i < fragPlayers.length; i++) {
-            System.out.printf("Enter the number of frags of \"%s\" of team %s: ", playersName[i], nameTeam);
-            fragPlayers[i] = sc.nextInt();
+//            System.out.printf("Enter the number of frags of \"%s\" of team %s: ", playersName[i], nameTeam);
+            fragPlayers[i] = ThreadLocalRandom.current().nextInt(0, 51);
         }
         return fragPlayers;
     }
 
-    // функция просто пичатает количесвто фрагов каждого игрока
+    // функция просто печатает количество фрагов каждого игрока
     private static void printFragPlayers(String nameTeam, int[] fragPlayers, String[] playersName) {
         for (int i = 0; i < fragPlayers.length; i++) {
             System.out.printf("\nPlayer %s of Team %s has a frag : %d", playersName[i], nameTeam, fragPlayers[i]);
