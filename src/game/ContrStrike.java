@@ -25,13 +25,14 @@ public class ContrStrike {
         printFragPlayers(secondTeamName, fragPlayersSecondTeam, playersSecondTeam);
         System.out.printf("\nAverage frags team %s: %.2f\n", secondTeamName, avgFragSecondTeam);
 
-        double esp = 0.000001; // точность сравнения при действительных числах
-        if (avgFragFirstTeam > avgFragSecondTeam) {
+        double esp = 0.00001;// точность сравнения при действительных числах
+        double difference = avgFragFirstTeam - avgFragSecondTeam; //разница между результатами
+        if (abs(difference) > esp && difference > 0) {
             System.out.println("\nTeam " + firstTeamName + " has won!" + " Scored points: " + avgFragFirstTeam);
-        } else if (avgFragFirstTeam < avgFragSecondTeam) {
+        } else if (abs(difference) > esp && difference < 0) {
             System.out.println("\nTeam " + secondTeamName + " has won!" + " Scored points: " + avgFragSecondTeam);
-        } else if (abs(avgFragFirstTeam - avgFragSecondTeam) <= esp) {
-            System.out.println("\nDraw in the game");
+        } else if (abs(difference) <= esp) {
+            System.out.println("\nDraw in the game! Both have points: " + avgFragFirstTeam);
         } else {
             System.out.println("\nThe game did not take place!");
         }
