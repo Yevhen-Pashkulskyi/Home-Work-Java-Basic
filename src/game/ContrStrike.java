@@ -6,9 +6,11 @@ import java.util.concurrent.ThreadLocalRandom;
 import static java.lang.Math.abs;
 
 public class ContrStrike {
+
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         int numberOfPlayers = 5;
-        Scanner sc = new Scanner(System.in);
         System.out.print("Enter the name of the first team: ");
         String firstTeamName = sc.nextLine();
         String[] playersFirstTeam = enterNamePlayers(numberOfPlayers);
@@ -68,7 +70,6 @@ public class ContrStrike {
 
     // функция записывает все имена игроков в масив
     private static String[] enterNamePlayers(int numberOfPlayers) {
-        Scanner sc = new Scanner(System.in);
         String[] namePlayers = new String[numberOfPlayers];
         for (int i = 0; i < numberOfPlayers; i++) {
             System.out.print("Enter the name of player " + (i + 1) + ": ");
