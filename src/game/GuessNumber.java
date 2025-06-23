@@ -27,12 +27,20 @@ public class GuessNumber {
     private static void guess() {
         int randomNumber = ThreadLocalRandom.current().nextInt(0, 10);
         System.out.println("Guess the number between 0 and 10");
+        int count = 0;
+        int limitAttempt = 5;
         do {
+            count++;
             System.out.print("Your guess: ");
             int namedNumber = sc.nextInt();
             if (namedNumber == randomNumber) {
                 System.out.println("Congratulations! You won!");
-                break;
+                return;
+            }
+            if (count >= limitAttempt) {
+                System.out.println("You lost!\n" +
+                        "Number: " + randomNumber);
+                return;
             }
         } while (true);
     }
