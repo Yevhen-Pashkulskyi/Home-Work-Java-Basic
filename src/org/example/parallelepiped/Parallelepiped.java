@@ -1,4 +1,4 @@
-package parallelepiped;
+package org.example.parallelepiped;
 
 import java.util.Scanner;
 

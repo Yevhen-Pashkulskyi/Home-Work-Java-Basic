@@ -1,4 +1,4 @@
-package game;
+package org.example.game;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -35,9 +35,9 @@ public class ContrStrike {
         } else if (abs(difference) > esp && difference < 0) {
             System.out.println("\nTeam " + secondTeamName + " has won!" + " Scored points: " + avgFragSecondTeam);
         } else if (abs(difference) <= esp) {
-            System.out.println("\nDraw in the game! Both have points: " + avgFragFirstTeam);
+            System.out.println("\nDraw in the org.example.game! Both have points: " + avgFragFirstTeam);
         } else {
-            System.out.println("\nThe game did not take place!");
+            System.out.println("\nThe org.example.game did not take place!");
         }
     }
 

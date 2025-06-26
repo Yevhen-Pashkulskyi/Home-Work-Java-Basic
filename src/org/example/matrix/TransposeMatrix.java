@@ -1,4 +1,4 @@
-package matrix;
+package org.example.matrix;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -16,7 +16,7 @@ public class TransposeMatrix {
         printMatrix(matrix, "Matrix");
 
         int[][] transposedMatrix = transposeMatrix(matrix, column, row);
-        printMatrix(transposedMatrix, "Transposed matrix");
+        printMatrix(transposedMatrix, "Transposed org.example.matrix");
     }
 
     private static int[][] createdMatrix(int row, int column) {

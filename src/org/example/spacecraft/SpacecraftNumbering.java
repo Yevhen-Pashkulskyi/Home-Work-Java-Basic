@@ -1,4 +1,4 @@
-package spacecraft;
+package org.example.spacecraft;
 
 public class SpacecraftNumbering {
     public static void main(String[] args) {

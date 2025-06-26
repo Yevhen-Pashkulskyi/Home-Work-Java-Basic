@@ -1,4 +1,4 @@
-package game;
+package org.example.game;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;

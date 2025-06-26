@@ -1,4 +1,4 @@
-package dynasty;
+package org.example.dynasty;
 
 public class ChinesDynasty {
     public static void main(String[] args) {
