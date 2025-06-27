@@ -1,4 +1,4 @@
-package org.example.oop;
+package org.example.oop.person;
 
 public class PersonDemo {
     public static void main(String[] args) {
