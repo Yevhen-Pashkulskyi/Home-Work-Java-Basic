@@ -1,14 +1,14 @@
 package org.example.oop.fitnessTrekker;
 
 public class AccountSportsmen {
-    private String name;
-    private int dayBirthday; // день рождения
-    private int monthBirthday; // месяц рождения
-    private int yearBirthday; // год рождения
-    private String email; // электронная почта
-    private String phoneNumber; //телефонный номер
-    private int age;
+    private final String name;
+    private final int dayBirthday; // день рождения
+    private final int monthBirthday; // месяц рождения
+    private final int yearBirthday; // год рождения
+    private final String email; // электронная почта
+    private final String phoneNumber; //телефонный номер
 
+    private int age;
     private String surname; //фамилия
     private double weight; // вес
     private int pressure; //давление
