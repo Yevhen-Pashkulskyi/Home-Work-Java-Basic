@@ -1,6 +1,7 @@
 package org.example.oop.fitnessTrekker;
 
 public class AccountSportsmen {
+    private static final int YEAR_TO_DAY = 2025;
     private final String name;
     private final int dayBirthday; // день рождения
     private final int monthBirthday; // месяц рождения
@@ -26,7 +27,7 @@ public class AccountSportsmen {
         this.weight = weight;
         this.pressure = pressure;
         this.steps = steps;
-        this.age = 2025 - yearBirthday;
+        this.age = YEAR_TO_DAY - yearBirthday;
     }
 
     public String getName() {
@@ -89,7 +90,7 @@ public class AccountSportsmen {
         this.steps = steps;
     }
 
-    public void printAccountInfo(){
+    public void printAccountInfo() {
         System.out.printf("\nName: %s\n", name);
         System.out.printf("Surname: %s\n", surname);
         System.out.printf("Day birthday: %d\n", dayBirthday);
