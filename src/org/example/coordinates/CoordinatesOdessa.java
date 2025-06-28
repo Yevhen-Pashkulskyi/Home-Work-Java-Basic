@@ -1,4 +1,4 @@
-package org.example.Coordinates;
+package org.example.coordinates;
 
 public class CoordinatesOdessa {
     public static void main(String[] args) {
