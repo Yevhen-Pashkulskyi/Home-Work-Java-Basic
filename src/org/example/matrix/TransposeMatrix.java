@@ -15,8 +15,8 @@ public class TransposeMatrix {
         int[][] matrix = createdMatrix(row, column);
         printMatrix(matrix, "Matrix");
 
-        int[][] transposedMatrix = transposeMatrix(matrix, column, row);
-        printMatrix(transposedMatrix, "Transposed org.example.matrix");
+        int[][] transposedMatrix = transposeMatrix(matrix);
+        printMatrix(transposedMatrix, "Transposed matrix");
     }
 
     private static int[][] createdMatrix(int row, int column) {
@@ -39,8 +39,8 @@ public class TransposeMatrix {
         }
     }
 
-    private static int[][] transposeMatrix(int[][] matrix, int row, int column) {
-        int[][] transposedMatrix = new int[row][column];
+    private static int[][] transposeMatrix(int[][] matrix) {
+        int[][] transposedMatrix = new int[matrix[0].length][matrix.length];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 transposedMatrix[j][i] = matrix[i][j];
