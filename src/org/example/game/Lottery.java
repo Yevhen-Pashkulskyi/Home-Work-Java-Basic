@@ -56,7 +56,7 @@ public class Lottery {
     // поиск одинаковых значений в масиве
     private static int searchNumberToAirs(int[] firstArray, int[] secondArray) {
         int counter = 0;
-        for (int i = 0; i < firstArray.length; i++) {
+        for (int i = 0; i < Math.min(firstArray.length, secondArray.length); i++) {
             if (firstArray[i] == secondArray[i]) {
                 counter++;
             }
