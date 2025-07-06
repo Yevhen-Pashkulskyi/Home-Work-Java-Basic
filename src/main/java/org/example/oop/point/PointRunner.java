@@ -17,9 +17,9 @@ public class PointRunner {
         System.out.println(secondPoint);
 
         double pointFirst = firstPoint.distancePoint(xFirstPoint, yFirstPoint);
-        System.out.println(pointFirst);
+        System.out.println("Distance: " + pointFirst);
         double pointSecond = secondPoint.distancePoint(xSecondPoint, ySecondPoint);
-        System.out.println(pointSecond);
+        System.out.println("Distance: " + pointSecond);
 
         double distance = Point.distanceBetweenPoint(firstPoint, secondPoint);
         System.out.println("Растояние между точками: " + distance);
