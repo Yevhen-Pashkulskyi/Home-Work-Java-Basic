@@ -7,7 +7,7 @@ public class TransposeMatrix {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-    TransposeMatrix tM = new TransposeMatrix();
+        TransposeMatrix tM = new TransposeMatrix();
         System.out.print("Enter the row of Matrix: ");
         int row = sc.nextInt();
         System.out.print("Enter the column of Matrix: ");
@@ -75,7 +75,7 @@ public class TransposeMatrix {
     public String searchSquare(int[][] matrix) {
         int count = 0;
         String square = "";
-        if(matrix==null ||matrix.length == 0 || matrix[0].length == 0){
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return square;
         }
         for (int i = 0; i < matrix.length; i++) {
@@ -86,7 +86,7 @@ public class TransposeMatrix {
         if (count == matrix.length) {
             square = "Yes";
         } else {
-           square = "No";
+            square = "No";
         }
         return square;
     }
