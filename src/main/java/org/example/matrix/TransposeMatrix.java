@@ -7,6 +7,8 @@ public class TransposeMatrix {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+//        TransposeMatrix.Main.main(args);
+
         TransposeMatrix tM = new TransposeMatrix();
         System.out.print("Enter the row of Matrix: ");
         int row = sc.nextInt();
@@ -90,4 +92,12 @@ public class TransposeMatrix {
         }
         return square;
     }
+
+//    class Main {
+//        public static void main(String[] args) {
+//            TransposeMatrix t = new TransposeMatrix();
+//            int[][] matrix = t.createdMatrix(2, 2);
+//            t.printMatrix(matrix, "matrix");
+//        }
+//    }
 }
