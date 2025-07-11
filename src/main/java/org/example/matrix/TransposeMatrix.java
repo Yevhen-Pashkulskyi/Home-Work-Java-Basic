@@ -75,22 +75,15 @@ public class TransposeMatrix {
 
     // метод проверяет на квадратность матрицы
     public String searchSquare(int[][] matrix) {
-        int count = 0;
-        String square = "";
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
-            return square;
+            return "";
         }
         for (int i = 0; i < matrix.length; i++) {
-            if (matrix.length == matrix[i].length) {
-                count++;
+            if (matrix[i] == null || matrix.length == matrix[i].length) {
+                return "No";
             }
         }
-        if (count == matrix.length) {
-            square = "Yes";
-        } else {
-            square = "No";
-        }
-        return square;
+        return "Yes";
     }
 
 //    class Main {
