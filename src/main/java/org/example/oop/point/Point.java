@@ -14,6 +14,9 @@ public class Point implements Cloneable {
 
     // конструткор копирования
     public Point(Point p) {
+        if (p == null) {
+            return;
+        }
         this.x = p.x;
         this.y = p.y;
     }
