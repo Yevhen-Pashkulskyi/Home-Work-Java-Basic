@@ -14,23 +14,29 @@ public class User {
     private static final int MIN_LENGTH_PASSWORD = 6;
 
     public User(String login, String password, String confirmPassword) {
+        validateLogin(login);
+        validatePassword(password);
+        equalsPassword(confirmPassword, password);
         this.login = login;
-        if (password.equals(confirmPassword)) {
-            this.password = password;
-        }
+        this.password = password;
     }
 
-    static boolean validateLogin(String login) {
+    public void validateLogin(String login) {
+        if (login == null || login.isEmpty()) {
+            throw new WrongLoginException("Логин не может быть пустым.");
+        }
         if (!isValidMaxLength(login, MAX_LENGTH_LOGIN)) {
             throw new WrongLoginException("Логин не может быть больше " + MAX_LENGTH_LOGIN + " символов!");
         }
         if (!isValidationLatinLetters(login)) {
-            throw new WrongLoginException("Символы должны быть только латиница");
+            throw new WrongLoginException("Логин должен быть только латиница");
         }
-        return true;
     }
 
-    static boolean validatePassword(String password) {
+    public void validatePassword(String password) {
+        if (password == null || password.isEmpty()) {
+            throw new WrongPasswordException("Пароль не может быть пустым.");
+        }
         if (!isValidOnlyStrAndNum(password)) {
             throw new WrongPasswordException("Пароль должен иметь только символы и цифры.");
         }
@@ -46,17 +52,15 @@ public class User {
         if (!isValidMaxLength(password, MAX_LENGTH_PASSWORD)) {
             throw new WrongPasswordException("Пароль не дожен быть больше " + MAX_LENGTH_PASSWORD + " символов!");
         }
-        return true;
     }
 
-    static boolean equalsPassword(String password, String confirmPassword) {
+    public void equalsPassword(String password, String confirmPassword) {
         if (!password.equals(confirmPassword)) {
-            throw new WrongPasswordException("Пароли не совпадают.");
+            throw new WrongPasswordException("Пароль с подтверждением не совпадают.");
         }
-        return password.equals(confirmPassword);
     }
 
-    private static boolean isValidationLatinLetters(String str) {
+    private boolean isValidationLatinLetters(String str) {
         for (Character ch : str.toCharArray()) {
             if (!((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))) {
                 return false;
@@ -65,28 +69,28 @@ public class User {
         return true;
     }
 
-    private static boolean isValidMaxLength(String str, int maxLength) {
+    private boolean isValidMaxLength(String str, int maxLength) {
         if (str.length() > maxLength) {
             return false;
         }
         return true;
     }
 
-    private static boolean isValidOneChar(String str) {
+    private boolean isValidOneChar(String str) {
         Pattern pattern = Pattern.compile("[a-zA-Z]");
         Matcher matcher = pattern.matcher(str);
         return matcher.find();
     }
 
-    private static boolean isValidOneNumber(String str) {
+    private boolean isValidOneNumber(String str) {
         Pattern pattern = Pattern.compile("[0-9]");
         Matcher matcher = pattern.matcher(str);
         return matcher.find();
     }
 
-    private static boolean isValidOnlyStrAndNum(String str) {
+    private boolean isValidOnlyStrAndNum(String str) {
         Pattern pattern = Pattern.compile("[a-zA-Z0-9]+");
         Matcher matcher = pattern.matcher(str);
-        return matcher.find();
+        return matcher.matches();
     }
 }
