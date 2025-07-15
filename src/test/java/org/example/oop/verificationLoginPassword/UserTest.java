@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
-    private User user;
+    private User testUser;
     private String login;
     private String password;
     private String confirmPassword;
@@ -20,7 +20,12 @@ class UserTest {
         this.login = "admin";
         this.password = "admin123456";
         this.confirmPassword = "admin123456";
-        this.user = new User(login, password, confirmPassword);
+        this.testUser = new User(login, password, confirmPassword);
+    }
+
+    @Test
+    void validateUserCreation() throws WrongLoginException, WrongPasswordException {
+        Assertions.assertDoesNotThrow(() -> testUser);
     }
 
     @Test
@@ -98,7 +103,9 @@ class UserTest {
         String confirmPassword = "notEqualsPassword";
 
         Assertions.assertThrows(WrongPasswordException.class,
-                () -> {new User(this.login, this.password, confirmPassword);});
+                () -> {
+                    new User(this.login, this.password, confirmPassword);
+                });
     }
 
     private void isValidLogin(String login) {
