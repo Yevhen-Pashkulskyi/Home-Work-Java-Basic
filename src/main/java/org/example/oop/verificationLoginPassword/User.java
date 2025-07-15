@@ -21,7 +21,7 @@ public class User {
         this.password = password;
     }
 
-    public void validateLogin(String login) {
+    private void validateLogin(String login) {
         if (login == null || login.isEmpty()) {
             throw new WrongLoginException("Логин не может быть пустым.");
         }
@@ -33,7 +33,7 @@ public class User {
         }
     }
 
-    public void validatePassword(String password) {
+    private void validatePassword(String password) {
         if (password == null || password.isEmpty()) {
             throw new WrongPasswordException("Пароль не может быть пустым.");
         }
@@ -54,7 +54,7 @@ public class User {
         }
     }
 
-    public void equalsPassword(String password, String confirmPassword) {
+    private void equalsPassword(String password, String confirmPassword) {
         if (!password.equals(confirmPassword)) {
             throw new WrongPasswordException("Пароль с подтверждением не совпадают.");
         }
