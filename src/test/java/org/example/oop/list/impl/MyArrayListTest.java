@@ -1,5 +1,6 @@
-package org.example.oop.list;
+package org.example.oop.list.impl;
 
+import org.example.oop.list.MyListException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

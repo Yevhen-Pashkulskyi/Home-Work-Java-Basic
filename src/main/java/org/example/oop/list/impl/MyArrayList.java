@@ -1,4 +1,7 @@
-package org.example.oop.list;
+package org.example.oop.list.impl;
+
+import org.example.oop.list.MyList;
+import org.example.oop.list.MyListException;
 
 public class MyArrayList implements MyList {
     private static final int INITIAL_CAPACITY = 16;
